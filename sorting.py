@@ -53,10 +53,16 @@ def sort_by_year_program_lastname(d):
     pass
 
 
-def sort_by_vowel_count(d):
-    """Print TA names sorted by number of vowels in name."""
-    pass
+def getVowelCount(string):
+    return sum(list(map(string.lower().count, "aeiou")))
 
+def sort_by_vowel_count(d, decreasing=False):
+    """Print TA names sorted by number of vowels in name."""
+
+    #
+    for name in sorted(d.keys(), key=getVowelCount, reverse=decreasing):
+        print(name)
+    pass
 
 # part 1: print TA names sorted by last name
 sort_by_lastname(tas_dict)
