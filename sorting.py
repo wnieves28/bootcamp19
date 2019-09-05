@@ -45,8 +45,9 @@ def sort_by_lastname(d):
 
 def sort_by_lab_lastname(d):
     """Print TA names sorted by lab then last name."""
-    pass
-
+    for name, info in sorted(tas_dict.items(), key=lambda x: x[1]['lab'],
+                             reverse=False):
+        print(name + ": " + str(info["lab"]) + " lab")
 
 def sort_by_year_program_lastname(d):
     """Print TA names sorted by year, then program, then last name."""
