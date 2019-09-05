@@ -51,7 +51,13 @@ def sort_by_lab_lastname(d):
 
 def sort_by_year_program_lastname(d):
     """Print TA names sorted by year, then program, then last name."""
-    pass
+    sortedYear = sorted(tas_dict.items(), key=_year_from_dict, reverse=True)
+    name, info = x
+    _program_from_dict = info["program"]
+    sortedYearProgram = sorted(sortedYear.items(), key=_program_from_dict)
+    fullSort = sortedYearProgram.sort(key=lambda x: x['name'].split()[-1])
+    for name, info in fullSort:
+       print name + ": " + str(info["program"] + " program") + str(info["year"] 
 
 
 def getVowelCount(string):
