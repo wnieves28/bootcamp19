@@ -66,7 +66,12 @@ def sort_by_vowel_count(d, decreasing=False):
     pass
 
 # part 1: print TA names sorted by last name
-sort_by_lastname(tas_dict)
+def sort_by_lastname(d, decreasing=False):
+    """Print lastnames of TAs sorted by name. Sorting is by default always
+       alphanumerically increasing. If we want them in decreasing order, we
+       can reverse the sort."""
+    for name in sorted(tas_dict.keys()[1], reverse=decreasing):
+        print(name)
 
 # part 2: print TA names sorted by lab then last name
 sort_by_lab_lastname(tas_dict)
