@@ -57,7 +57,7 @@ def sort_by_year_program_lastname(d):
     sortedYearProgram = sorted(sortedYear.items(), key=_program_from_dict)
     fullSort = sortedYearProgram.sort(key=lambda x: x['name'].split()[-1])
     for name, info in fullSort:
-       print name + ": " + str(info["program"] + " program") + str(info["year"] 
+       print(name + ": " + str(info["program"] + " program") + str(info["year"])
 
 
 def getVowelCount(string):
